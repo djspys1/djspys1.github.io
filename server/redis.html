@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>redis安装与使用 | 个人文档</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    
+    <meta name="description" content="小鹏个人文档">
+    <meta name="keywords" content="小鹏,blog,djspys,bbr,chrome,firewall,前端面试,table,html,vue,css,php,xampp,redis">
+    <link rel="preload" href="/assets/css/0.styles.4a3e1b49.css" as="style"><link rel="preload" href="/assets/js/app.c6b1cc19.js" as="script"><link rel="preload" href="/assets/js/2.6601f5ed.js" as="script"><link rel="preload" href="/assets/js/20.d62776c2.js" as="script"><link rel="prefetch" href="/assets/js/10.20b79bb5.js"><link rel="prefetch" href="/assets/js/11.26d0d302.js"><link rel="prefetch" href="/assets/js/12.f5255ec0.js"><link rel="prefetch" href="/assets/js/13.f512610d.js"><link rel="prefetch" href="/assets/js/14.51a90532.js"><link rel="prefetch" href="/assets/js/15.8b5c556e.js"><link rel="prefetch" href="/assets/js/16.54c39e8c.js"><link rel="prefetch" href="/assets/js/17.d9e7f651.js"><link rel="prefetch" href="/assets/js/18.160532be.js"><link rel="prefetch" href="/assets/js/19.cd5f0081.js"><link rel="prefetch" href="/assets/js/21.a639e316.js"><link rel="prefetch" href="/assets/js/22.449d3446.js"><link rel="prefetch" href="/assets/js/23.86927b1c.js"><link rel="prefetch" href="/assets/js/3.5cc68ab4.js"><link rel="prefetch" href="/assets/js/4.f15acc75.js"><link rel="prefetch" href="/assets/js/5.71a9b689.js"><link rel="prefetch" href="/assets/js/6.862a2a88.js"><link rel="prefetch" href="/assets/js/7.e0c55023.js"><link rel="prefetch" href="/assets/js/8.4ef47606.js"><link rel="prefetch" href="/assets/js/9.98d476fd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4a3e1b49.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/fronted/javascript.html" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/interview/backend/php.html" class="nav-link">
+  后端
+</a></li></ul></div></div><div class="nav-item"><a href="/knowledge/table.html" class="nav-link">
+  小技巧
+</a></div><div class="nav-item"><a href="/server/bbr.html" class="nav-link">
+  服务器
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/fronted/javascript.html" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/interview/backend/php.html" class="nav-link">
+  后端
+</a></li></ul></div></div><div class="nav-item"><a href="/knowledge/table.html" class="nav-link">
+  小技巧
+</a></div><div class="nav-item"><a href="/server/bbr.html" class="nav-link">
+  服务器
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/server/bbr.html" class="sidebar-link">bbr加速</a></li><li><a href="/server/xampp.html" class="sidebar-link">xampp</a></li><li><a href="/server/redis.html" class="active sidebar-link">redis安装与使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/server/redis.html#centos7安装redis" class="sidebar-link">centos7安装Redis</a></li><li class="sidebar-sub-header"><a href="/server/redis.html#redis实现主从配置" class="sidebar-link">redis实现主从配置</a></li></ul></li><li><a href="/server/firewall.html" class="sidebar-link">firewall防火墙常用操作</a></li><li><a href="/server/vi.html" class="sidebar-link">Ubuntu下使用Vi时方向键变乱码 退格键不能使用的解决方法</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="redis安装与使用"><a href="#redis安装与使用" class="header-anchor">#</a> redis安装与使用</h1> <h2 id="centos7安装redis"><a href="#centos7安装redis" class="header-anchor">#</a> centos7安装Redis</h2> <div class="language- extra-class"><pre class="language-text"><code>sudo apt-get install redis-server
+</code></pre></div><ul><li>检查Redis服务器系统进程</li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ ps -aux|grep redis
+redis     4162  0.1  0.0  10676  1420 ?        Ss   23:24   0:00 /usr/bin/redis-server /etc/redis/redis.conf
+conan     4172  0.0  0.0  11064   924 pts/0    S+   23:26   0:00 grep --color=auto redis
+</code></pre></div><ul><li>通过启动命令检查Redis服务器状态</li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ netstat -nlt|grep 6379
+tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN
+</code></pre></div><ul><li>通过启动命令检查Redis服务器状态</li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ sudo /etc/init.d/redis-server status
+redis-server is running
+</code></pre></div><ul><li>通过命令行客户端访问Redis</li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ redis-cli
+redis 127.0.0.1:6379&gt;
+</code></pre></div><ul><li>命令行的帮助</li></ul> <div class="language- extra-class"><pre class="language-text"><code>redis 127.0.0.1:6379&gt; help
+redis-cli 2.2.12
+Type: &quot;help @&quot; to get a list of commands in 
+      &quot;help &quot; for help on 
+      &quot;help &quot; to get a list of possible help topics
+      &quot;quit&quot; to exit
+</code></pre></div><ul><li><p>修改Redis的配置</p> <ul><li><p>使用Redis的访问账号</p> <ul><li><p>默认情况下，访问Redis服务器是不需要密码的，为了增加安全性我们需要设置Redis服务器的访问密码。设置访问密码为redisredis。</p></li> <li><p>用vi打开Redis服务器的配置文件redis.conf</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ sudo vi /etc/redis/redis.conf
+</code></pre></div></li> <li><p>取消注释requirepass</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>requirepass redisredis
+</code></pre></div><ul><li><p>让Redis服务器被远程访问</p> <ul><li>默认情况下，Redis服务器不允许远程访问，只允许本机访问，所以我们需要设置打开远程访问的功能。</li> <li>用vi打开Redis服务器的配置文件redis.conf</li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ sudo vi /etc/redis/redis.conf
+</code></pre></div><ul><li>注释bind</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#bind 127.0.0.1
+</code></pre></div><ul><li>修改后，重启Redis服务器。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ sudo /etc/init.d/redis-server restart
+Stopping redis-server: redis-server.
+Starting redis-server: redis-server.
+</code></pre></div></li> <li><p>未使用密码登陆Redis服务器</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ redis-cli
+redis 127.0.0.1:6379&gt; keys *
+(error) ERR operation not permitted
+</code></pre></div><ul><li><p>发现可以登陆，但无法执行命令了。</p></li> <li><p>登陆Redis服务器，输入密码</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>~  redis-cli -a redisredis
+redis 127.0.0.1:6379&gt; keys *
+             1) &quot;key2&quot;
+             2) &quot;key3&quot;
+             3) &quot;key4&quot;
+</code></pre></div><ul><li><p>登陆后，一切正常。</p></li> <li><p>检查Redis的网络监听端口</p></li> <li><p>检查Redis服务器占用端口</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ netstat -nlt|grep 6379
+tcp        0      0 0.0.0.0:6379            0.0.0.0:*               LISTEN
+</code></pre></div><ul><li><p>我们看到从之间的网络监听从 127.0.0.1:3306 变成 0 0.0.0.0:3306，表示Redis已经允许远程登陆访问。</p></li> <li><p>我们在远程的另一台Linux访问Redis服务器</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>~ redis-cli -a redisredis -h 192.168.1.199
+redis 192.168.1.199:6379&gt; keys *
+1) &quot;key2&quot;
+2) &quot;key3&quot;
+3) &quot;key4&quot;
+</code></pre></div></li></ul> <p><a href="http://blog.fens.me/linux-redis-install/" target="_blank" rel="noopener noreferrer">参考文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="redis实现主从配置"><a href="#redis实现主从配置" class="header-anchor">#</a> redis实现主从配置</h2> <ul><li><p>假设有2台服务器，一台master，一台slave</p> <ul><li>配置master下的redis.con文件
+<ul><li>bind {masterIp}</li> <li>requirepass {your pass}</li></ul></li> <li>配置slave服务器下的redis.con文件
+<ul><li>bind {slaveIp}</li> <li>slaveof {masterIp} {masterPort}</li> <li>masterauth {masterRequirepass}</li></ul></li></ul></li> <li><p>测试</p> <ul><li>启动master服务器的redis</li></ul> <div class="language- extra-class"><pre class="language-text"><code>sudo redis-cli -h 192.168.107.130
+auth {masterRequirepass}
+set a 1
+set b 2
+keys *
+</code></pre></div><ul><li>启动slave服务器的redis</li></ul> <div class="language- extra-class"><pre class="language-text"><code>sudo redis-cli -h 192.168.107.131
+keys *
+</code></pre></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/server/xampp.html" class="prev">
+        xampp
+      </a></span> <span class="next"><a href="/server/firewall.html">
+        firewall防火墙常用操作
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c6b1cc19.js" defer></script><script src="/assets/js/2.6601f5ed.js" defer></script><script src="/assets/js/20.d62776c2.js" defer></script>
+  </body>
+</html>
